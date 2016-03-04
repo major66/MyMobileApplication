@@ -31,16 +31,15 @@ function onPhotoDataSuccess(imageData) {
 
     $("#buttons").hide();
     $("#images").show();
-    var smallImage = document.getElementById('editor-window');
 
-    // Unhide image elements
-    //
-    smallImage.style.display = 'block';
-
-    // Show the captured photo
-    // The in-line CSS rules are used to resize the image
-    //
-    smallImage.src = "data:image/jpeg;base64," + imageData;
+    $("#editor-window").imageEditor({
+        'source': "data:image/jpeg;base64," + imageData,
+        'maxwidth': 500,
+        "onClose": function () {
+            $("#buttons").show();
+            $("#images").hide();
+        }
+    });
 }
 
 // Called when a photo is successfully retrieved
@@ -53,16 +52,17 @@ function onPhotoURISuccess(imageURI) {
     //
     $("#buttons").hide();
     $("#images").show();
-    var largeImage = document.getElementById('editor-window');
 
-    // Unhide image elements
-    //
-    largeImage.style.display = 'block';
+    alert(imageURI);
+    $("#editor-window").imageEditor({
+        'source': imageURI,
+        'maxwidth': 500,
+        "onClose": function () {
+            $("#buttons").show();
+            $("#images").hide();
+        }
+    });
 
-    // Show the captured photo
-    // The in-line CSS rules are used to resize the image
-    //
-    largeImage.src = imageURI;
 }
 
 // A button will call this function
