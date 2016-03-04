@@ -1,31 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Capture Photo</title>
-    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
-    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery-1.12.0.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/vintageJS-master/dist/vintage.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/vintageJS-master/dist/jquery.vintage.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
-</head>
-<body>
-<div data-role="main" class="ui-content">
-<button onclick="capturePhoto();" class="ui-btn">Capture Photo</button>
-<button onclick="capturePhotoEdit();" class="ui-btn">Capture Editable Photo</button>
-<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);" class="ui-btn">From Photo Library</button>
-<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn">From Photo Album</button>
-</div>
-<div>
-<img style="display:none;width:80px;height:80px;" id="smallImage" src="" />
-<img style="display:none;width:90%;height:90%;" id="largeImage" src="" />
-</div>
-<!--
-<div data-role="filter" class=" ui-content">
-    <button class="ui-btn">sepia</button>
-    <button class="ui-btn">coco</button>
-    <button class="ui-btn">banane</button>
-</div>-->
-</body>
+    <head>
+        <title>Capture Photo</title>
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+        <link href="js/imageEditor-master/css/boostrap-image-editor.css" rel="stylesheet">
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery-1.12.0.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/imageEditor-master/dependencies/jquery-ui.js" ></script>
+        <script type="text/javascript" charset="utf-8" src="js/imageEditor-master/dependencies/bootstrap.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/imageEditor-master/js/boostrap-image-editor.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/CamanJS-4.1.1/dist/caman.full.js"></script>
+
+    </head>
+    <body style="background-color: grey; color: white;">
+        <div data-role="main" class="ui-content" style="background-color: grey;">
+            <h1 style="color:white; margin: 0; text-align: center;">Camera Filter</h1>
+            <button style="border: none; background-color: grey; width: 49%; display: inline-block;" onclick="capturePhoto();" class="ui-btn">
+                <img style="width: 50%;" src="img/photo.png"/>
+                <div style="font-weight: 100; color: white; word-wrap: break-word; white-space: pre-line;">Prendre une photo</div>
+            </button>
+            <button style="border: none; background-color: grey; width: 49%; height: 50%; display: inline-block;" onclick="capturePhotoEdit();" class="ui-btn">
+                <img style="color: white; width: 50%;" src="img/picture.png"/>
+                <div style="font-weight: 100; color: white; word-wrap: break-word; white-space: pre-line;">Prendre une photo éditable</div>
+            </button>
+            <button style="border: none; background-color: grey; width: 49%; display: inline-block;" onclick="getPhoto(pictureSource.PHOTOLIBRARY);" class="ui-btn">
+                <img style="color: white; width: 50%;" src="img/picture-1.png"/>
+                <div style="font-weight: 100; color: white; word-wrap: break-word; white-space: pre-line;">Photos depuis ma galerie</div>
+            </button>
+            <button style="border: none; background-color: grey; width: 49%; display: inline-block;" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn">
+                <img style="color: white; width: 50%;" src="img/technology.png"/>
+                <div style="font-weight: 100; color: white; word-wrap: break-word; white-space: pre-line;">Photos depuis mes albums</div>
+            </button>
+        </div>
+        <div>
+            <img style="display:none;width:80px;height:80px;" id="smallImage" src="" />
+            <img style="display:none;width:90%;height:90%;" id="largeImage" src="" />
+        </div>
+        <!--
+        <div data-role="filter" class=" ui-content">
+            <button class="ui-btn">sepia</button>
+            <button class="ui-btn">coco</button>
+            <button class="ui-btn">banane</button>
+        </div>-->
+    </body>
 </html>

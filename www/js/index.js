@@ -12,7 +12,9 @@ function onDeviceReady() {
     pictureSource=navigator.camera.PictureSourceType;
     destinationType=navigator.camera.DestinationType;
 
-
+    var screenHeight = window.innerHeight;
+    $("button").height(screenHeight / 3);
+    $(".ui-content").height(screenHeight / 1.055);
 }
 
 // Called when a photo is successfully retrieved
