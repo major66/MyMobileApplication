@@ -25,10 +25,6 @@ function onDeviceReady() {
 //
 function onPhotoDataSuccess(imageData) {
 
-    //var image = document.getElementById('largeImage');
-    // image.src = imageData;
-    // Uncomment to view the base64-encoded image data
-    // console.log(imageData);
 
     // Get image handle
     //
