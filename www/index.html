@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capture Photo</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/vintageJS-master/dist/vintage.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/vintageJS-master/dist/jquery.vintage.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+</head>
+<body>
+<div data-role="main" class="ui-content">
+<button onclick="capturePhoto();" class="ui-btn">Capture Photo</button>
+<button onclick="capturePhotoEdit();" class="ui-btn">Capture Editable Photo</button>
+<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);" class="ui-btn">From Photo Library</button>
+<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);" class="ui-btn">From Photo Album</button>
+</div>
+<div>
+<img style="display:none;width:80px;height:80px;" id="smallImage" src="" />
+<img style="display:none;width:90%;height:90%;" id="largeImage" src="" />
+</div>
+<!--
+<div data-role="filter" class=" ui-content">
+    <button class="ui-btn">sepia</button>
+    <button class="ui-btn">coco</button>
+    <button class="ui-btn">banane</button>
+</div>-->
+</body>
+</html>
