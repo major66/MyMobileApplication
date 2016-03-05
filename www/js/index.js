@@ -53,7 +53,16 @@ function onPhotoURISuccess(imageURI) {
     $("#buttons").hide();
     $("#images").show();
 
-    alert(imageURI);
+//    alert(imageURI);
+
+    var photo_split;
+    if (imageURI.substring(0, 21) == "content://com.android") {
+        photo_split = imageURI.split("%3A");
+        imageURI = "content://media/external/images/media/" + photo_split[1];
+    }
+
+//    alert(imageURI);
+
     $("#editor-window").imageEditor({
         'source': imageURI,
         'maxwidth': 500,
