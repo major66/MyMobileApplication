@@ -24,54 +24,24 @@ function onDeviceReady() {
 // Called when a photo is successfully retrieved
 //
 function onPhotoDataSuccess(imageData) {
-
-
     // Get image handle
-    //
-
     $("#buttons").hide();
     $("#images").show();
+    var smallImage = document.getElementById('editor-window');
 
-    $("#editor-window").imageEditor({
-        'source': "data:image/jpeg;base64," + imageData,
-        'maxwidth': 500,
-        "onClose": function () {
-            $("#buttons").show();
-            $("#images").hide();
-        }
-    });
+    smallImage.style.display = 'block';
+    smallImage.src = "data:image/jpeg;base64," + imageData;
 }
 
 // Called when a photo is successfully retrieved
 //
 function onPhotoURISuccess(imageURI) {
-    // Uncomment to view the image file URI
-    // console.log(imageURI);
-
-    // Get image handle
-    //
     $("#buttons").hide();
     $("#images").show();
+    var largeImage = document.getElementById('editor-window');
 
-//    alert(imageURI);
-
-    var photo_split;
-    if (imageURI.substring(0, 21) == "content://com.android") {
-        photo_split = imageURI.split("%3A");
-        imageURI = "content://media/external/images/media/" + photo_split[1];
-    }
-
-//    alert(imageURI);
-
-    $("#editor-window").imageEditor({
-        'source': imageURI,
-        'maxwidth': 500,
-        "onClose": function () {
-            $("#buttons").show();
-            $("#images").hide();
-        }
-    });
-
+    largeImage.style.display = 'block';
+    largeImage.src = imageURI;
 }
 
 // A button will call this function
